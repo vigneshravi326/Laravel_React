@@ -1,0 +1,63 @@
+# Laravel specific
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+.env
+.env.*
+
+# Cache and logs
+/bootstrap/cache/*
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+
+# IDE-specific files
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# PhpStorm
+.idea/
+*.iml
+.idea_modules/
+.idea/*.iml
+.idea/workspace.xml
+.idea/inspectionProfiles/*
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# NPM and Vite specific
+node_modules/
+dist/
+.vite
+.vite-cache/
+
+# TypeScript specific
+*.tsbuildinfo
+
+# Composer
+composer.phar
+
+# Other
+*.log
+*.lock
+*.temp
+*.tmp
+
+# Laravel Horizon
+horizon/*.json
+horizon/*.lock
+horizon/*.data
+
+# Deployed files (optional)
+.env.production
+.env.staging

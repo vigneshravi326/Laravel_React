@@ -61,3 +61,4 @@ horizon/*.data
 # Deployed files (optional)
 .env.production
 .env.staging
+/public/build/

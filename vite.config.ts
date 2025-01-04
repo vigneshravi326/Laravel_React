@@ -1,19 +1,28 @@
 import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 export default defineConfig({
-    plugins: [react()],
-    root: resolve(__dirname, 'resources/js'),
-    build: {
-        outDir: resolve(__dirname, 'public/dist'),
-        rollupOptions: {
-            input: resolve(__dirname, 'resources/js/App.tsx'),
-        },
-    },
+    plugins: [
+        laravel({
+            input: ['resources/css/app.css', 'resources/js/app.tsx'],
+            refresh: true,
+        }),
+        react({
+            // Add React plugin specific options here
+            include: '**/*.{jsx,tsx}',
+            babel: {
+                plugins: ['@babel/plugin-syntax-dynamic-import'],
+            },
+        }),
+    ],
     resolve: {
         alias: {
-            '@': resolve(__dirname, 'resources/js'),
+            '@': '/resources/js',
         },
+    },
+    optimizeDeps: {
+        include: ['@inertiajs/react'],
     },
 });
